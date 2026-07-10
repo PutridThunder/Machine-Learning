@@ -32,7 +32,7 @@ MachineLearning/
 
 ---
 
-## Topics Covered
+## Topics Covered (in progress)
 
 - Exploratory Data Analysis (EDA)
 - Data Cleaning
@@ -59,7 +59,6 @@ MachineLearning/
 - Matplotlib
 - Seaborn
 - Scikit-learn
-- Jupyter Notebook
 
 ---
 
