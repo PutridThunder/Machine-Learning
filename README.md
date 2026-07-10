@@ -19,11 +19,9 @@ A personal repository documenting my machine learning journey through theory, ex
 ```text
 MachineLearning/
 │
-├── datasets/          # Raw and processed datasets
-├── projects/          # Complete machine learning projects
-├── notebooks/         # Exploratory analysis and experiments
+├── Datasets/          # Raw and processed datasets
+├── Projects/          # Complete machine learning projects
 ├── src/               # Reusable Python modules
-├── learning/          # Notes and algorithm implementations
 ├── resources/         # References, papers, and study material
 │
 ├── requirements.txt
