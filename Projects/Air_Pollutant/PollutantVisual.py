@@ -26,6 +26,14 @@ def Dset_info(x):
     x.info() # column names, non null index counts, Dtype, memory usage
     print(x.describe()) # for each column, filled index count, mean, min, 25%, 50%, 75%, max, std
 
+def Plot_histogram(data):
+    data.hist(bins= 50, figsize = (20,15)) # histogram of all pollutants
+    plt.show()
+
+
+def Plot_Correlations(data):
+    sns.heatmap(data,vmin=-1, vmax=1, annot=True, cmap="RdBu", linewidths=1) # heat map of correlations
+    plt.show()
 ######################################################################################################################################################################
 
 Section(" DATASET INFO ")
@@ -60,17 +68,14 @@ Section("")
 
 Section(" DATA VISUALISING ")
 
-corr_matrix = dataset.corr(numeric_only=True)
 
-# dataset.hist(bins= 50, figsize = (20,15)) # histogram of all pollutants
+Plot_histogram(dataset)
+
+corr_matrix = dataset.corr(numeric_only=True)
+Plot_Correlations(corr_matrix)
 
 # with the histogram, there seems to be strong correlations between multiple pollutants
 
-
-# sns.heatmap(corr_matrix,vmin=-1, vmax=1, annot=True, cmap="RdBu", linewidths=1) # heat map of correlations
-
-sns.pairplot(corr_matrix)
-plt.show()
 Section("")
 
 print(corr_matrix["C6H6(GT)"].sort_values(ascending=False))
