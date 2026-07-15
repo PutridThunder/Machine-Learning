@@ -3,7 +3,7 @@
 
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue)
 ![Machine Learning](https://img.shields.io/badge/Machine%20Learning-scikit--learn-orange)
-![Libraries](https://img.shields.io/badge/Libraries-Pandas%20%7C%20NumPy%20%7C%20Matplotlib%20%7C%20scikit--learn-green)
+![Libraries](https://img.shields.io/badge/Libraries-Pandas%20%7C%20NumPy%20%7C%20Matplotlib%20%7C%20scikit--learn%20%7C%20Seaborn-green)
 
 An end-to-end supervised machine learning project that predicts California housing prices using demographic and geographic census data. The project implements a complete machine learning workflow—from exploratory data analysis and preprocessing to model training, evaluation, and comparison using scikit-learn.
 
