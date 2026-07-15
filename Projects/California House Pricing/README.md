@@ -155,6 +155,7 @@ While the overall workflow follows the concepts presented in Géron's book, the 
 - Pandas
 - Matplotlib
 - scikit-learn
+- Seaborn
 
 ---
 
