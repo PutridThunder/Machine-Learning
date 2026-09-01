@@ -34,13 +34,30 @@ def Plot_histogram(data):
 def Plot_Correlations(data):
     sns.heatmap(data,vmin=-1, vmax=1, annot=True, cmap="RdBu", linewidths=1) # heat map of correlations
     plt.show()
+
+def Nan_Info(data):
+    """Displays the number and percentage of NaN values in each column."""
+
+    nan_count = data.isna().sum()
+    nan_percent = (nan_count / len(data)) * 100
+
+    nan_summary = pd.DataFrame({
+        "Missing Values": nan_count,
+        "Percent Missing": nan_percent.round(2)
+    })
+
+    # Only show columns that actually contain missing values
+    nan_summary = nan_summary[nan_summary["Missing Values"] > 0]
+
+    print(nan_summary.sort_values("Percent Missing", ascending=False))
+
 ######################################################################################################################################################################
 
 Section(" DATASET INFO ")
 Dset_info(dataset)
 Section("")
 
-# looking at thism I realised the min value in all the columns is -200... we can't have a negative count of any pollutant, the min should be 0
+# looking at this, I realised the min value in all the columns is -200... we can't have a negative count of any pollutant, the min should be 0
 
 print((dataset == -200).sum()) # number of -200s per column
 
@@ -56,9 +73,9 @@ Dset_info(dataset)
 
 # since we are missing alot of values, I'm curious how many rows only have nan values, they are useless to us
 
-Pollutant_Rows = dataset.columns[2:]
+Measurement_Columns = dataset.columns[2:]
 
-Full_Nans = (dataset[Pollutant_Rows].isna()).all(axis=1)
+Full_Nans = (dataset[Measurement_Columns].isna()).all(axis=1)
 
 print(f"Entire nan rows: {Full_Nans.sum()}") #31 fully nan rows
 
@@ -79,3 +96,12 @@ Plot_Correlations(corr_matrix)
 Section("")
 
 print(corr_matrix["C6H6(GT)"].sort_values(ascending=False))
+
+# how much of each column is nan?
+
+Nan_Info(dataset)
+
+#  90.20% of NMHC(GT) is missing!
+# ~17% of CO(GT), NO2(GT), and NOx(GT) is missing
+
+# we'll make the predictor estimate CO levels
