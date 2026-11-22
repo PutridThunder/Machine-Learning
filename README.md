@@ -65,7 +65,7 @@ MachineLearning/
 | Project | Status |
 |---------|--------|
 | California Housing Price Prediction | ✅ Complete |
-| Air Quality Analysis & Pollutant Prediction | 🚧 In Progress |
+| Air Quality Analysis & Pollutant Prediction | ✅ Complete |
 
 ---
 
